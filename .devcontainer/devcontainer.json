@@ -1,0 +1,25 @@
+{
+  "name": "PHP + MySQL Test",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "overrideCommand": false,
+  "forwardPorts": [80, "phpmyadmin:80"],
+  "portsAttributes": {
+    "80": {
+      "label": "Aplicație PHP",
+      "onAutoForward": "notify"
+    },
+    "phpmyadmin:80": {
+      "label": "phpMyAdmin",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client"
+      ]
+    }
+  }
+}
